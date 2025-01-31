@@ -12,7 +12,7 @@ class ExpenseForm extends Component
 {
     public $categories;
     public $category_id;
-    public $expenses, $description, $amount, $category, $date, $expense_id;
+    public $expenses, $description, $amount, $date, $expense_id;
     public $totalExpenses;
 
     public function render()
@@ -20,6 +20,7 @@ class ExpenseForm extends Component
         $this->categories = Category::where('user_id', Auth::id())->get();
         $this->expenses = Expense::where('user_id', Auth::id())->get();
         $this->totalExpenses = Expense::where('user_id', Auth::id())->sum('amount');
+
         return view('livewire.expense-form');
     }
 

@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\Category;
+use App\Models\Source;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Expense extends Model
+class Income extends Model
 {
     use HasFactory;
 
@@ -15,13 +15,13 @@ class Expense extends Model
         'user_id',
         'description',
         'amount',
-        'category_id',
+        'source_id',
         'date'
     ];
 
-    public function category()
+    public function source()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Source::class);
     }
 
     public function user()

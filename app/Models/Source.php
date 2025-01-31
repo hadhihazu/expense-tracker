@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\Expense;
+use App\Models\Income;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Source extends Model
 {
     protected $fillable = ['name', 'user_id'];
 
@@ -15,8 +15,8 @@ class Category extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function expenses()
+    public function incomes()
     {
-        return $this->hasMany(Expense::class);
+        return $this->hasMany(Income::class);
     }
 }

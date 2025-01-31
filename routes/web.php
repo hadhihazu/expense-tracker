@@ -1,16 +1,18 @@
 <?php
 
+use App\Livewire\BudgetForm;
+use App\Livewire\IncomeForm;
 use App\Livewire\ExpenseForm;
+use App\Livewire\CategoryManager;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
-use App\Livewire\CategoryManager;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('livewire.financial-summary');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -19,7 +21,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/expenses', ExpenseForm::class)->name('expenses');
+    Route::get('/incomes', IncomeForm::class)->name('incomes');
     Route::get('/categories', CategoryManager::class)->name('categories');
+    Route::get('/budgets', BudgetForm::class)->name('budgets');
 });
 
 require __DIR__ . '/auth.php';

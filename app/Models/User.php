@@ -3,7 +3,9 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Budget;
 use App\Models\Expense;
+use App\Models\Category;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -47,8 +49,18 @@ class User extends Authenticatable
         ];
     }
 
+    public function category()
+    {
+        return $this->hasMany(Category::class);
+    }
+
     public function expenses()
     {
         return $this->hasMany(Expense::class);
+    }
+
+    public function budgets()
+    {
+        return $this->hasMany(Budget::class);
     }
 }
