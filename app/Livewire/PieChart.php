@@ -12,16 +12,15 @@ use Illuminate\Support\Facades\Auth;
 
 class PieChart extends Component
 {
-    public $pieChartData;
-    public $barChartData;
-    public $lineChartData;
-    public $doughnutChartData;
+    public $pieChartData, $barChartData, $lineChartData, $doughnutChartData;
+    public $totalExpenses, $totalIncomes, $totalTransactions;
 
     public function mount()
     {
         $this->byCategory();
         $this->byMonth();
         $this->bySource();
+        $this->calculateTotals();
     }
 
     public function byCategory()
@@ -103,6 +102,13 @@ class PieChart extends Component
         ];
     }
 
+    public function calculateTotals()
+    {
+        $this->totalExpenses = Expense::where('user_id', Auth::id())->sum('amount');
+        $this->totalIncomes = Income::where('user_id', Auth::id())->sum('amount');
+        $this->totalTransactions = Expense::where('user_id', Auth::id())->count() +
+            Income::where('user_id', Auth::id())->count();
+    }
 
     public function render()
     {

@@ -1,4 +1,22 @@
 <div>
+        <!-- Total Expenses -->
+        <div class="">
+            <h3 class="text-lg font-semibold">Total Expenses</h3>
+            <p class="text-2xl font-bold">RM {{ number_format($totalExpenses, 2) }}</p>
+        </div>
+
+        <!-- Total Incomes -->
+        <div class=""">
+            <h3 class="text-lg font-semibold">Total Income</h3>
+            <p class="text-2xl font-bold">RM {{ number_format($totalIncomes, 2) }}</p>
+        </div>
+
+        <!-- Total Transactions -->
+        <div class="">
+            <h3 class="text-lg font-semibold">Total Transactions</h3>
+            <p class="text-2xl font-bold">{{ $totalTransactions }}</p>
+        </div>
+
     <!-- Pie Chart -->
     <h2 class="text-lg font-semibold text-center my-4">Expenses by Category</h2>
     <canvas id="expensePieChart"></canvas>
