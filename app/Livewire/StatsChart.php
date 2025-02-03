@@ -10,7 +10,7 @@ use App\Models\Expense;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 
-class PieChart extends Component
+class StatsChart extends Component
 {
     public $pieChartData, $barChartData, $lineChartData, $doughnutChartData;
     public $totalExpenses, $totalIncomes, $totalTransactions;
@@ -112,6 +112,6 @@ class PieChart extends Component
 
     public function render()
     {
-        return view('livewire.pie-chart');
+        return view('livewire.stats-chart');
     }
 }

@@ -5,5 +5,5 @@
         </h2>
     </x-slot>
 
-    @livewire('stats-chart')
+    @livewire('budget-form')
 </x-app-layout>
