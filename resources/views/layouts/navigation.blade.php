@@ -19,8 +19,8 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('budgets')" :active="request()->routeIs('budgets')">
-                        {{ __('Budgets') }}
+                    <x-nav-link :href="route('budget-page')" :active="request()->routeIs('budget-page')">
+                        {{ __('Budget') }}
                     </x-nav-link>
                 </div>
 
@@ -35,6 +35,13 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('incomes')" :active="request()->routeIs('incomes')">
                         {{ __('Incomes') }}
+                    </x-nav-link>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('category-page')" :active="request()->routeIs('category-page')">
+                        {{ __('Category') }}
                     </x-nav-link>
                 </div>
             </div>

@@ -17,15 +17,20 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/budget-page', function () {
+    return view('budget-page');
+})->middleware(['auth', 'verified'])->name('budget-page');
+
+Route::get('/category-page', function () {
+    return view('category-page');
+})->middleware(['auth', 'verified'])->name('category-page');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // Route::get('/budget', function () {
-    //     return view('budget-page')->name('budget');
-    // });
+
 
     Route::get('/expenses', ExpenseForm::class)->name('expenses');
     Route::get('/incomes', IncomeForm::class)->name('incomes');
