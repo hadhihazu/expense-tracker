@@ -1,8 +1,6 @@
 <div class="p-2">
     <div class="max-w-7xl mx-auto px-2 lg:px-8">
         <div class="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-sm">
-            <h2 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-300">Manage Your Budget</h2>
-
             <!-- Success Message -->
             @if (session()->has('message'))
                 <div class="p-2 bg-green-500 text-white rounded mb-4">
@@ -39,13 +37,13 @@
                                 {{ $isEditing ? '' : 'disabled' }}
                             >
                             @if($isEditing && isset($budgets[$category->id]))
-                                <button
+                                <x-danger-button
                                     type="button"
                                     wire:click="deleteBudget({{ $category->id }})"
                                     class="px-3 py-1 bg-red-500 text-white rounded"
                                 >
                                     ✕
-                                </button>
+                                </x-danger-button>
                             @endif
                         </div>
                     @endforeach

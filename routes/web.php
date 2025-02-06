@@ -25,6 +25,14 @@ Route::get('/category-page', function () {
     return view('category-page');
 })->middleware(['auth', 'verified'])->name('category-page');
 
+Route::get('/expense-page', function () {
+    return view('expense-page');
+})->middleware(['auth', 'verified'])->name('expense-page');
+
+Route::get('/income-page', function () {
+    return view('income-page');
+})->middleware(['auth', 'verified'])->name('income-page');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

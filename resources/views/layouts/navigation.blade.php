@@ -26,14 +26,14 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('expenses')" :active="request()->routeIs('expenses')">
+                    <x-nav-link :href="route('expense-page')" :active="request()->routeIs('expense-page')">
                         {{ __('Expenses') }}
                     </x-nav-link>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('incomes')" :active="request()->routeIs('incomes')">
+                    <x-nav-link :href="route('income-page')" :active="request()->routeIs('income-page')">
                         {{ __('Incomes') }}
                     </x-nav-link>
                 </div>
