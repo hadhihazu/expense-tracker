@@ -5,5 +5,6 @@
         </h2>
     </x-slot>
 
-    @livewire('budget-form')
+    {{-- @livewire('budget-form') --}}
+    <livewire:budget-form />
 </x-app-layout>

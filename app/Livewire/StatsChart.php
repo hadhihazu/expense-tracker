@@ -14,6 +14,7 @@ class StatsChart extends Component
 {
     public $pieChartData, $barChartData, $lineChartData, $doughnutChartData;
     public $totalExpenses, $totalIncomes, $totalTransactions;
+    public $notification;
 
     public function mount()
     {
@@ -21,6 +22,7 @@ class StatsChart extends Component
         $this->byMonth();
         $this->bySource();
         $this->calculateTotals();
+        $this->checkBudgetExceeded();
     }
 
     public function byCategory()
@@ -108,6 +110,34 @@ class StatsChart extends Component
         $this->totalIncomes = Income::where('user_id', Auth::id())->sum('amount');
         $this->totalTransactions = Expense::where('user_id', Auth::id())->count() +
             Income::where('user_id', Auth::id())->count();
+    }
+
+    public function checkBudgetExceeded()
+    {
+        $userId = Auth::id();
+        $currentMonthId = now()->month;
+
+        // Get total budget for the current month
+        $budget = Budget::where('user_id', $userId)
+            ->where('month_id', $currentMonthId)
+            ->sum('amount');
+
+        // Get total expenses for the current month
+        $expenses = Expense::where('user_id', $userId)
+            ->whereMonth('date', $currentMonthId)
+            ->sum('amount');
+
+        // Check if expenses exceed budget
+        if ($expenses > $budget) {
+            $this->notification = "Warning: Your expenses for this month have exceeded your budget!";
+        } else {
+            $this->notification = null; // No warning if within budget
+        }
+    }
+
+    public function closeNotification()
+    {
+        $this->notification = null;
     }
 
     public function render()

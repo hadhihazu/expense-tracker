@@ -93,6 +93,11 @@ class BudgetForm extends Component
         unset($this->budgets[$category_id]); // Remove from UI
     }
 
+    public function cancelEdit()
+    {
+        $this->isEditing = false;
+    }
+
     public function render()
     {
         return view('livewire.budget-form');

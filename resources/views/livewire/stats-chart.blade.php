@@ -1,5 +1,18 @@
 <div class="p-2">
     <div class="max-w-7xl mx-auto px-2 lg:px-8">
+        <!-- Budget Warning Notification -->
+        @if ($notification)
+            <div class="bg-red-950 text-red-500 p-4 rounded-lg mb-2 text-center flex justify-between">
+                <div>
+                    <i class="bi bi-exclamation-triangle mx-2"></i>
+                    <span>{{ $notification }}</span>
+                </div>
+                <button wire:click="closeNotification" class="text-red-500 text-xl focus:outline-none">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+        @endif
+
         <!-- Stats Section -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-2">
             <!-- Total Expenses -->
