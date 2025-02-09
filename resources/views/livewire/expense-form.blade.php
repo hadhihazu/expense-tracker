@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-2 lg:px-8">
         <div class="flex gap-2">
             <!-- Expense Form -->
-            <div class="w-1/3 bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6">
+            <div class="w-1/4 bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6">
                 <form wire:submit.prevent="{{ $expense_id ? 'update' : 'create' }}" class="mb-6">
                     <div class="mb-4">
                         <div class="mb-4">
@@ -46,7 +46,7 @@
                 </form>
             </div>
 
-            <div class="w-2/3 flex flex-col gap-2">
+            <div class="w-3/4 flex flex-col gap-2">
                 <!-- Display the total expenses -->
                 <div class="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6">
                     <div class="flex justify-between items-center">
@@ -60,6 +60,7 @@
                     <table class="table min-w-full mt-1">
                         <thead>
                             <tr class="text-bold text-gray-700 dark:text-gray-300">
+                                <th class="py-2 px-4 border-b">No.</th>
                                 <th class="py-2 px-4 border-b">Description</th>
                                 <th class="py-2 px-4 border-b">Amount</th>
                                 <th class="py-2 px-4 border-b">Category</th>
@@ -68,18 +69,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($expenses as $expense)
-                                <tr class="text-cente">
-                                    <td class="py-2 px-4 w-48 text-center text-gray-700 dark:text-gray-300 border-b border-gray-700">{{ $expense->description }}</td>
-                                    <td class="py-2 px-4 text-center text-gray-700 dark:text-gray-300 border-b border-gray-700">RM {{ number_format($expense->amount, 2) }}</td>
-                                    <td class="py-2 px-4 text-center text-gray-700 dark:text-gray-300 border-b border-gray-700">{{ $expense->category->name }}</td>
-                                    <td class="py-2 px-4 text-center text-gray-700 dark:text-gray-300 border-b border-gray-700">{{ $expense->date }}</td>
-                                    <td class="py-2 px-4 text-center text-gray-700 dark:text-gray-300 border-b border-gray-700">
+                            @forelse ($expenses as $index => $expense)
+                                <tr class="text-center">
+                                    <td class="py-2 px-4 text-gray-700 dark:text-gray-300 border-b border-gray-700">{{ $index + 1 }}</td>
+                                    <td class="py-2 px-4 w-48 text-gray-700 dark:text-gray-300 border-b border-gray-700">{{ $expense->description }}</td>
+                                    <td class="py-2 px-4 text-gray-700 dark:text-gray-300 border-b border-gray-700">RM {{ number_format($expense->amount, 2) }}</td>
+                                    <td class="py-2 px-4 text-gray-700 dark:text-gray-300 border-b border-gray-700">{{ $expense->category->name }}</td>
+                                    <td class="py-2 px-4 text-gray-700 dark:text-gray-300 border-b border-gray-700">{{ $expense->date }}</td>
+                                    <td class="py-2 px-4 text-gray-700 dark:text-gray-300 border-b border-gray-700">
                                         <x-primary-button wire:click="edit({{ $expense->id }})" class="bg-yellow-500 text-white px-3 py-1 rounded-md">Edit</x-primary-button>
                                         <x-danger-button wire:click="delete({{ $expense->id }})" class="bg-red-500 text-white px-3 py-1 rounded-md ml-2">Delete</x-danger-button>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="6" class="py-4 text-center text-gray-500 dark:text-gray-400">No expenses found.</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

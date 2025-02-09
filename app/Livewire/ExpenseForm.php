@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Models\Category;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Livewire\WithPagination;
 
 class ExpenseForm extends Component
 {
@@ -14,6 +15,7 @@ class ExpenseForm extends Component
     public $category_id;
     public $expenses, $description, $amount, $date, $expense_id;
     public $totalExpenses;
+    public $expenseList;
 
     public function render()
     {
