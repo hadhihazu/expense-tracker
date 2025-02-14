@@ -31,11 +31,12 @@
                         <div class="mb-4">
                             <x-input-label for="date">Date</x-input-label>
                             <div class="flex items-center space-x-2">
-                                <x-text-input type="date" id="date" wire:model="date" class="w-full mt-1"></x-text-input>
-                                <x-secondary-button type="button" wire:click="setTodayDate">
+                                <x-text-input type="date" id="date" wire:model="date" class="w-full mt-1 px-3 py-2"></x-text-input>
+                                <x-secondary-button type="button" wire:click="setTodayDate" class="h-10 px-4">
                                     Today
                                 </x-secondary-button>
                             </div>
+
                             @error('date') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                         </div>
                     </div>
