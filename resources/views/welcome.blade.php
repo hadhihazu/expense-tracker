@@ -9,31 +9,32 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
+        <body class="font-sans antialiased bg-[url(/images/bg.webp)] backdrop-blur-xl bg-right bg-cover text-white min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="flex justify-between items-center py-6 px-8">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <img src="images/dark-logo.png" alt="Expensify Logo" class="h-10 w-auto">
+                <h1 class="text-2xl font-bold text-white">Expensify</h1>
+            </div>
+
+            <!-- Navigation -->
             @if (Route::has('login'))
-                <nav class="-mx-3 flex flex-1 justify-end">
+                <nav class="flex space-x-4">
                     @auth
-                        <a
-                            href="{{ url('/dashboard') }}"
-                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                        >
+                        <a href="{{ url('/dashboard') }}" class="px-4 py-2 text-black transition hover:text-black/70 dark:text-white dark:hover:text-white/80">
                             Dashboard
                         </a>
                     @else
-                        <a
-                            href="{{ route('login') }}"
-                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                        >
-                            Log in
+                        <a href="{{ route('login') }}" class="px-4 py-2 text-black transition hover:text-black/70 dark:text-white dark:hover:text-white/80">
+                            Login
                         </a>
-
                         @if (Route::has('register'))
-                            <a
-                                href="{{ route('register') }}"
-                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                            >
+                            <a href="{{ route('register') }}" class="px-4 py-2 bg-[#007f8e] text-white rounded-md transition hover:bg-[#005f6e]">
                                 Register
                             </a>
                         @endif
@@ -41,5 +42,40 @@
                 </nav>
             @endif
         </header>
+
+        <!-- Hero Section with Gradient -->
+        <section class="text-white py-20 text-center">
+            <h1 class="text-5xl font-extrabold">Take Control of Your Finances</h1>
+            <p class="mt-3 text-lg">Expensify helps you track your expenses, manage your budget, and gain financial clarity.</p>
+            <a href="/register" class="mt-6 inline-block bg-white text-[#007f8e] px-6 py-3 rounded-lg font-medium transition hover:bg-gray-200">
+                Get Started for Free
+            </a>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-16 px-8 text-center">
+            <h2 class="text-4xl font-semibold text-white]">Why Choose Expensify?</h2>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-lg shadow-[0px_0px_10px_5px_rgba(0,_0,_0,_0.1)] text-white">
+                    <h3 class="text-xl font-bold"><i class="fa-solid fa-coins pe-1"></i> Smart Expense Tracking</h3>
+                    <p class="mt-2">Automatically categorize and monitor your spending habits.</p>
+                </div>
+                <div class="p-6 rounded-lg shadow-[0px_0px_10px_5px_rgba(0,_0,_0,_0.1)] text-white">
+                    <h3 class="text-xl font-bold"><i class="fa-solid fa-chart-simple pe-1"></i> Real-Time Budget Analysis</h3>
+                    <p class="mt-2">Compare your spending with your set budget and avoid overspending.</p>
+                </div>
+                <div class="p-6 rounded-lg shadow-[0px_0px_10px_5px_rgba(0,_0,_0,_0.1)] text-white">
+                    <h3 class="text-xl font-bold"><i class="fa-solid fa-calendar pe-1"></i> Monthly Reports & Insights</h3>
+                    <p class="mt-2">Visual charts and trends help you make informed financial decisions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-6">
+            <p class="text-sm text-white">
+                &copy; {{ date('Y') }} Expensify. All rights reserved.
+            </p>
+        </footer>
     </body>
 </html>

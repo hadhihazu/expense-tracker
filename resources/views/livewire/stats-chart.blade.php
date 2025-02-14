@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-2 lg:px-8">
         <!-- Budget Warning Notification -->
         @if ($notification)
-            <div class="bg-red-950 text-red-500 p-4 rounded-lg mb-2 text-center flex justify-between">
+            <div class="bg-red-200 dark:bg-red-950 text-red-500 p-4 rounded-lg mb-2 text-center flex justify-between">
                 <div>
                     <i class="bi bi-exclamation-triangle mx-2"></i>
                     <span>{{ $notification }}</span>
