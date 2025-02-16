@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-2 lg:px-8">
         <div class="flex gap-2">
             <!-- Expense Form -->
-            <div class="w-1/4 bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6">
+            <div class="w-1/4 bg-white dark:bg-zinc-800 shadow-sm rounded-lg p-6">
                 <form wire:submit.prevent="{{ $expense_id ? 'update' : 'create' }}" class="mb-6">
                     <div class="mb-4">
                         <div class="mb-4">
@@ -18,8 +18,8 @@
                         </div>
 
                         <div class="mb-4">
-                            <x-input-label for="category" class="block text-sm font-medium text-gray-700">Category</x-input-label>
-                            <x-select wire:model="category_id" id="category" class="w-full mt-1 border border-gray-300 rounded-md shadow-sm">
+                            <x-input-label for="category" class="block text-sm font-medium text-zinc-700">Category</x-input-label>
+                            <x-select wire:model="category_id" id="category" class="w-full mt-1 border border-zinc-300 rounded-md shadow-sm">
                                 <option value="">Select a category</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -49,42 +49,42 @@
 
             <div class="w-3/4 flex flex-col gap-2">
                 <!-- Display the total expenses -->
-                <div class="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6">
+                <div class="bg-white dark:bg-zinc-800 shadow-sm rounded-lg p-6">
                     <div class="flex justify-between items-center">
-                        <x-input-label class="text-gray-700 dark:text-gray-300">Total Expenses</x-input-label>
-                        <h3 class="text-xl font-bold text-gray-700 dark:text-gray-300">RM {{ number_format($totalExpenses, 2) }}</h3>
+                        <x-input-label class="text-zinc-700 dark:text-zinc-300">Total Expenses</x-input-label>
+                        <h3 class="text-xl font-bold text-zinc-700 dark:text-zinc-300">RM {{ number_format($totalExpenses, 2) }}</h3>
                     </div>
                 </div>
 
                 <!-- Expenses List -->
-                <div class="flex-grow bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6 overflow-auto">
+                <div class="flex-grow bg-white dark:bg-zinc-800 shadow-sm rounded-lg p-6 overflow-auto">
                     <table class="table min-w-full mt-1">
                         <thead>
-                            <tr class="text-bold text-gray-700 dark:text-gray-300">
-                                <th class="py-2 px-4 border-b">No.</th>
-                                <th class="py-2 px-4 border-b">Description</th>
-                                <th class="py-2 px-4 border-b">Amount</th>
-                                <th class="py-2 px-4 border-b">Category</th>
-                                <th class="py-2 px-4 border-b">Date</th>
-                                <th class="py-2 px-4 border-b">Actions</th>
+                            <tr class="text-bold text-zinc-700 dark:text-zinc-300">
+                                <th class="py-2 px-4 border-b border-customBlue">No.</th>
+                                <th class="py-2 px-4 border-b border-customBlue">Description</th>
+                                <th class="py-2 px-4 border-b border-customBlue">Amount</th>
+                                <th class="py-2 px-4 border-b border-customBlue">Category</th>
+                                <th class="py-2 px-4 border-b border-customBlue">Date</th>
+                                <th class="py-2 px-4 border-b border-customBlue">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($expenses as $index => $expense)
                                 <tr class="text-center">
-                                    <td class="py-2 px-4 text-gray-700 dark:text-gray-300 border-b border-gray-700">{{ $index + 1 }}</td>
-                                    <td class="py-2 px-4 w-48 text-gray-700 dark:text-gray-300 border-b border-gray-700">{{ $expense->description }}</td>
-                                    <td class="py-2 px-4 text-gray-700 dark:text-gray-300 border-b border-gray-700">RM {{ number_format($expense->amount, 2) }}</td>
-                                    <td class="py-2 px-4 text-gray-700 dark:text-gray-300 border-b border-gray-700">{{ $expense->category->name }}</td>
-                                    <td class="py-2 px-4 text-gray-700 dark:text-gray-300 border-b border-gray-700">{{ $expense->date }}</td>
-                                    <td class="py-2 px-4 text-gray-700 dark:text-gray-300 border-b border-gray-700">
-                                        <x-primary-button wire:click="edit({{ $expense->id }})" class="bg-yellow-500 text-white px-3 py-1 rounded-md">Edit</x-primary-button>
-                                        <x-danger-button wire:click="delete({{ $expense->id }})" class="bg-red-500 text-white px-3 py-1 rounded-md ml-2">Delete</x-danger-button>
+                                    <td class="py-2 px-4 text-zinc-700 dark:text-zinc-300 border-b border-zinc-700">{{ $index + 1 }}</td>
+                                    <td class="py-2 px-4 w-48 text-zinc-700 dark:text-zinc-300 border-b border-zinc-700">{{ $expense->description }}</td>
+                                    <td class="py-2 px-4 text-zinc-700 dark:text-zinc-300 border-b border-zinc-700">RM {{ number_format($expense->amount, 2) }}</td>
+                                    <td class="py-2 px-4 text-zinc-700 dark:text-zinc-300 border-b border-zinc-700">{{ $expense->category->name }}</td>
+                                    <td class="py-2 px-4 text-zinc-700 dark:text-zinc-300 border-b border-zinc-700">{{ $expense->date }}</td>
+                                    <td class="py-2 px-4 text-zinc-700 dark:text-zinc-300 border-b border-zinc-700">
+                                        <x-primary-button wire:click="edit({{ $expense->id }})" class="text-white px-3 py-1 rounded-md">Edit</x-primary-button>
+                                        <x-secondary-button wire:click="delete({{ $expense->id }})" class="text-white px-3 py-1 rounded-md ml-2">Delete</x-secondary-button>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="6" class="py-4 text-center text-gray-500 dark:text-gray-400">No expenses found.</td>
+                                    <td colspan="6" class="py-4 text-center text-zinc-500 dark:text-zinc-400">No expenses found.</td>
                                 </tr>
                             @endforelse
                         </tbody>

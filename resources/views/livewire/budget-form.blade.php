@@ -1,6 +1,6 @@
 <div class="p-2">
     <div class="max-w-7xl mx-auto px-2 lg:px-8">
-        <div class="p-6 mb-2 rounded-lg bg-white dark:bg-gray-800 shadow-sm">
+        <div class="p-6 mb-2 rounded-lg bg-white dark:bg-zinc-800 shadow-sm">
             <!-- Success Message -->
             @if (session()->has('message'))
                 <div class="p-2 bg-green-500 text-white rounded mb-4">
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-sm">
+        <div class="p-6 rounded-lg bg-white dark:bg-zinc-800 shadow-sm">
             <!-- Budget Form -->
             <div class="flex justify-center items-center w-full">
                 @if($month_id)
@@ -32,12 +32,12 @@
                         <div class="flex flex-col items-center space-y-4">
                             @foreach($categories as $category)
                                 <div class="flex items-center space-x-4 w-full">
-                                    <label class="font-medium w-1/3 text-gray-700 dark:text-gray-300 text-center">
+                                    <label class="font-medium w-1/3 text-zinc-700 dark:text-zinc-300 text-center">
                                         {{ $category->name }}
                                     </label>
                                     <input
                                         wire:model="budgets.{{ $category->id }}"
-                                        class="w-2/3 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 rounded-md shadow-sm"
+                                        class="w-2/3 border-zinc-300 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 rounded-md shadow-sm"
                                         {{ $isEditing ? '' : 'disabled' }}
                                     />
                                     @if($isEditing && isset($budgets[$category->id]))

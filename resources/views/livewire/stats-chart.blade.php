@@ -16,35 +16,35 @@
         <!-- Stats Section -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-2">
             <!-- Total Expenses -->
-            <div class="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6 border border-red-500">
-                <p class="text-lg font-semibold text-gray-700 dark:text-gray-300">Total Expenses</p>
+            <div class="bg-white dark:bg-zinc-800 shadow-sm rounded-lg p-6 border border-red-500">
+                <p class="text-lg font-semibold text-zinc-700 dark:text-zinc-300">Total Expenses</p>
                 <h3 class="text-3xl font-bold text-red-500">RM {{ number_format($totalExpenses, 2) }}</h3>
             </div>
 
             <!-- Total Incomes -->
-            <div class="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6 border border-green-500">
-                <p class="text-lg font-semibold text-gray-700 dark:text-gray-300">Total Income</p>
+            <div class="bg-white dark:bg-zinc-800 shadow-sm rounded-lg p-6 border border-green-500">
+                <p class="text-lg font-semibold text-zinc-700 dark:text-zinc-300">Total Income</p>
                 <h3 class="text-3xl font-bold text-green-500">RM {{ number_format($totalIncomes, 2) }}</h3>
             </div>
 
             <!-- Total Transactions -->
-            <div class="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6 border border-gray-700 dark:border-gray-300">
-                <p class="text-lg font-semibold text-gray-700 dark:text-gray-300">Total Transactions</p>
-                <h3 class="text-3xl font-bold text-gray-700 dark:text-gray-300">{{ $totalTransactions }}</h3>
+            <div class="bg-white dark:bg-zinc-800 shadow-sm rounded-lg p-6 border border-customBlue dark:border-customBlue">
+                <p class="text-lg font-semibold text-zinc-700 dark:text-zinc-300">Total Transactions</p>
+                <h3 class="text-3xl font-bold text-customBlue dark:text-customBlue">{{ $totalTransactions }}</h3>
             </div>
         </div>
 
         <!-- Charts Section -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
             <!-- Expenses by Category (Pie Chart) -->
-            <div class="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6">
-                <h2 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">Expenses by Category</h2>
+            <div class="bg-white dark:bg-zinc-800 shadow-sm rounded-lg p-6">
+                <h2 class="text-lg font-semibold mb-4 text-zinc-700 dark:text-zinc-300">Expenses by Category</h2>
                 <canvas id="expensePieChart"></canvas>
             </div>
 
             <!-- Income by Source (Doughnut Chart) -->
-            <div class="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6">
-                <h2 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">Income by Source</h2>
+            <div class="bg-white dark:bg-zinc-800 shadow-sm rounded-lg p-6">
+                <h2 class="text-lg font-semibold mb-4 text-zinc-700 dark:text-zinc-300">Income by Source</h2>
                 <canvas id="incomeDoughnutChart"></canvas>
             </div>
         </div>
@@ -52,14 +52,14 @@
         <!-- Bar & Line Charts -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
             <!-- Expenses vs. Budgets by Month (Bar Charts) -->
-            <div class="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6">
-                <h2 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">Expenses vs. Budgets by Month</h2>
+            <div class="bg-white dark:bg-zinc-800 shadow-sm rounded-lg p-6">
+                <h2 class="text-lg font-semibold mb-4 text-zinc-700 dark:text-zinc-300">Expenses vs. Budgets by Month</h2>
                 <canvas id="expenseBudgetChart"></canvas>
             </div>
 
             <!-- Budgets by Month (Bar Charts) -->
-            <div class="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-6">
-                <h2 class="text-lg font-semibold mb-4 text-gray-700 dark:text-gray-300">Budgets by Month</h2>
+            <div class="bg-white dark:bg-zinc-800 shadow-sm rounded-lg p-6">
+                <h2 class="text-lg font-semibold mb-4 text-zinc-700 dark:text-zinc-300">Budgets by Month</h2>
                 <canvas id="budgetLineChart"></canvas>
             </div>
         </div>

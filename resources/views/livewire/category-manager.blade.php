@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-2 lg:px-8">
         <div class="flex gap-2">
             <!-- Form Section -->
-            <div class="bg-white dark:bg-gray-800 shadow-sm p-6 rounded-lg w-1/3">
+            <div class="bg-white dark:bg-zinc-800 shadow-sm p-6 rounded-lg w-1/3">
 
                 <form wire:submit.prevent="{{ $category_id ? 'update' : 'create' }}">
                     <div class="mb-4">
@@ -25,10 +25,10 @@
             </div>
 
             <!-- Table Section -->
-            <div class="table-responsive w-2/3 p-6 bg-white dark:bg-gray-800 shadow-sm rounded-lg">
+            <div class="table-responsive w-2/3 p-6 bg-white dark:bg-zinc-800 shadow-sm rounded-lg">
                 <table class="table min-w-full">
                     <thead>
-                        <tr class="text-bold text-gray-700 dark:text-gray-300">
+                        <tr class="text-bold text-zinc-700 dark:text-zinc-300">
                             <th class="py-2 px-4 border-b">Name</th>
                             <th class="py-2 px-4 border-b">Actions</th>
                         </tr>
@@ -36,10 +36,10 @@
                     <tbody>
                         @foreach ($categories as $category)
                             <tr>
-                                <td class="py-2 px-4 text-center text-gray-700 dark:text-gray-300 border-b border-gray-700">
+                                <td class="py-2 px-4 text-center text-zinc-700 dark:text-zinc-300 border-b border-zinc-700">
                                     {{ $category->name }}
                                 </td>
-                                <td class="py-2 px-4 text-center border-b border-gray-700">
+                                <td class="py-2 px-4 text-center border-b border-zinc-700">
                                     <x-primary-button wire:click="edit({{ $category->id }})">
                                         Edit
                                     </x-primary-button>
