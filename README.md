@@ -1,6 +1,6 @@
 # DompetFlow - Personal Expense Tracker
 
-![DompetFlow Screenshot](path/to/your/screenshot.png)
+![DompetFlow Screenshot](screenshots/landing-page.png)
 
 ## Overview
 DompetFlow is a personal expense tracker built using Laravel, Livewire, and Tailwind CSS. It helps users manage their income, expenses, and budgets efficiently while providing insightful reports and visualizations.
@@ -22,8 +22,8 @@ DompetFlow is a personal expense tracker built using Laravel, Livewire, and Tail
 ## Screenshots
 ![Dashboard](screenshots/dashboard.png)
 ![Expense](screenshots/expense-page.png)
-![Expense](screenshots/income-page.png)
-![Expense](screenshots/budget-page.png)
+![Income](screenshots/income-page.png)
+![Budget](screenshots/budget-page.png)
 
 ## About the Project
 This project was built as a personal tool for managing finances and is featured in my portfolio. It showcases my skills in Laravel, Livewire, and Tailwind CSS.
@@ -31,4 +31,4 @@ This project was built as a personal tool for managing finances and is featured 
 ## Contact
 If you'd like to learn more about this project, feel free to connect with me!
 
-[LinkedIn](your-linkedin-url) | [Portfolio](your-portfolio-url) | [GitHub](your-github-url)
+[LinkedIn](https://www.linkedin.com/in/nurul-hadhirah-hazuddin-a9028b300/) | [Portfolio](your-portfolio-url) | [GitHub](https://github.com/hadhihazu)
