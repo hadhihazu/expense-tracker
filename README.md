@@ -20,9 +20,20 @@ DompetFlow is a personal expense tracker built using Laravel, Livewire, and Tail
 - Chart.js (for data visualization)
 
 ## Screenshots
+- Dashboard
+
 ![Dashboard](screenshots/dashboard.png)
+
+- Expense
+
 ![Expense](screenshots/expense-page.png)
+
+- Income
+
 ![Income](screenshots/income-page.png)
+
+- Budget
+
 ![Budget](screenshots/budget-page.png)
 
 ## About the Project
