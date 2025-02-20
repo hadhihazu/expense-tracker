@@ -42,4 +42,4 @@ This project was built as a personal tool for managing finances and is featured 
 ## Contact
 If you'd like to learn more about this project, feel free to connect with me!
 
-[LinkedIn](https://www.linkedin.com/in/nurul-hadhirah-hazuddin-a9028b300/) | [Portfolio](your-portfolio-url) | [GitHub](https://github.com/hadhihazu)
+hadhirah43@gmail.com | [LinkedIn](https://www.linkedin.com/in/nurul-hadhirah-hazuddin-a9028b300/) | [Portfolio](your-portfolio-url) | [GitHub](https://github.com/hadhihazu)
